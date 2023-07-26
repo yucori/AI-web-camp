@@ -25,6 +25,18 @@ button {
   font-weight: bold;
 }
 
+.desc {
+  color: rgb(116, 116, 116);
+}
+
 .desBox {
   margin: 20px;
+}
+
+.listBox {
+  border: 1.5px solid mediumaquamarine;
+  width: 50%;
+  height: 450px;
+  background-color: #f8f8f8;
+  margin-bottom: 70px;
 }
