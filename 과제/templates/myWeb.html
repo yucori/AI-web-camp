@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="description" content="This is my website" />
-    <link href="myWeb_styles.css" rel="stylesheet" />
+    <link
+      href="{{ url_for('static', filename='css/myWeb_styles.css') }}"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -33,10 +36,40 @@
         <span class="desc">성함, 아이디, 이메일, 별명 등을 입력해주세요.</span>
         <p>&nbsp</p>
       </div>
-      <div align="center">
+      <!-- <div align="center">
         <div class="hili"><p>검색 결과</p></div>
         <div class="listBox"></div>
-      </div>
+      </div> -->
+
+      <table
+        align="center"
+        class="table table-hover table-striped text-center"
+        style="width: 50%; border: 1px solid mediumaquamarine"
+      >
+        <thead>
+          <tr>
+            <center>
+              <th>번호</th>
+              <th>제목</th>
+              <th>내용</th>
+              <th>작성 시간</th>
+              <th>링크</th>
+            </center>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for i in data_list %}
+          <tr>
+            <td><center>{{ i[0] }}</center></td>
+            <td><center>{{ i[1] }}</center></td>
+            <td><center>{{ i[2] }}</center></td>
+            <td><center>{{ i[3] }}</center></td>
+            <td><center>{{ i[4] }}</center></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </main>
 
     <footer>
